@@ -1,0 +1,10 @@
+Package: lendingclub
+Version: 0.1
+Date: 2013-05-31
+Title:  Lending Club Analysis Kit
+Authors@R: c(person("Sidney", "Burks", email = "sid137@gmail.com", role = c('aut', 'cph', 'cre')))
+Depends: R (>= 2.15.2), rbundler
+Suggests: none
+Description:  Functions and utilities to help anaylize the Lending Club loan data
+Copyright: Sidney Burks
+License: None
