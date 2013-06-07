@@ -1,50 +1,105 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8">
-    <title>A Brand New nanoc Site - Home</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- you don't need to keep this, but it's cool for stats! -->
-    <meta name="generator" content="nanoc 3.6.4"> 
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-
-    
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
-    <div id="main">
-      <h1>Data Trek</h1>
+    <div class="container">
+      <div class="row">
+        <div class="span2">
+          <h2>Topics</h2>
+          <h5> Finance </h5>
+          <ul>
+            <li><a href="#interest">Interest</a></li>
+            <li><a href="#apr">APR</a></li>
+            <li><a href="#annuity">Annuity Formula</a></li>
+          </ul>
+          <hr />
+          <h5> Math </h5>
+          <ul>
+            <li> <a href="#geometric">Geometric Sequences</a></li>
+            <li> <a href="#arithmetic">Arithemetic Sequences</a></li>
+          </ul>
+        </div>
+        <div class="span10">
+          <a href="interest"></a>
+          <h2>Interest</h2>
 
-<p>This is a list of topics that in studied in order to understand how to
-profit from Lending Club. </p>
+          <p>
+              The fundamental idea behind interest, is that the borrower of a
+              loan is obligated to repay more than they initially borrowed.
 
-<ul>
-  <li><p><strong>Change this page’s content</strong> by editing the “index.html” file in the “content” directory. This is the actual page content, and therefore doesn’t include the header, sidebar or style information (those are part of the layout).</p></li>
-  <li><p><strong>Change the layout</strong>, which is the “default.html” file in the “layouts” directory, and create something unique (and hopefully less bland).</p></li>
-</ul>
+              We can think of this intrinsically as due to several reasons:
+              <ul>
+                <li>
+                The lender should be compensated for making an unnecessary use
+                of their money and taking a risk on the borrower
+                </li>
+                <li>
+                The lender could have profited better by putting their money to
+                use in other ways than lending it to the borrower
+                </li>
+              </ul>
+              As a result, the interest is the <em>compensation</em> that the
+              lender is given for having catered to the borrower
+          </p>
 
-\begin{equation}
-  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
-  \label{eq:sample}
-\end{equation}
-    </div>
-    <div id="sidebar">
-      <h2>Topics</h2>
-<ul>
-  <li> <a href="interest">Interest</a></li>
-  <li> <a href="apr">APR</a></li>
-  <li><a href="annuity">Annuity Formula</a></li>
-</ul>
-<hr />
+          <p>The goal of extending a loan with interst is to have a high amount
+          of money at the end of the loan period.  We essentially want to have
+          our initial amount, plus sum yet to be determined sum
+          </p>
 
-<h5> Math </h5>
-<ul>
-  <li> <a href="geometric">Geometric Sequences</a></li>
-  <li> <a href="arithmetic">Artihemetic Sequences</a></li>
-</ul>
 
+          <div class="well">
+            \begin{equation}
+              Total = Principal + Interest
+            \end{equation}
+          </div>
+          <p>We have two main ways of managing how this reward is determined,
+          we we refer to this as how the interest acrues</p>
+
+
+          <section>
+          <h3>Simple Interest</h3>
+          The simplest way to derive an interest payment is to consider it as a
+          repayment of a fraction \(f\) of the initial amount \(P_0\) that was borrowed.
+
+          <div class="well">
+            \begin{equation}
+              Interest = fP_o < P_0
+            \end{equation}
+          </div>
+
+          When we continually add on interest amounts of this form, we can
+          visualize this as a fixed amount of the initial capital, working to
+          earn money.  Because the income earning portion never changes or
+          grows, the total growth of capital remains linear.  We can represent
+          this mathematically as an Arithmetic Series, where each payment
+          amount is a term an the sequence. 
+
+          <div class="well">
+            \begin{equation}
+            S_n = P_0 + \sum_{k=1}^N a_k  \\ 
+            \end{equation}
+            \begin{equation}
+            S_n = P_0 + Na =  P_0 + NfP_0 \\
+            \end{equation}
+            \begin{equation}
+            S_n = P_0(1 + Nf)
+            \end{equation}
+          </div>
+
+          Because each interest payment is a fixed amount \(a = fP_0\), the \(a_k\) terms
+          are all constant, and we thus have a linear growth of capital until
+          the \(N^{th}\) payment.
+
+
+          </section>
+
+      </div>
     </div>
   </body>
 </html>
